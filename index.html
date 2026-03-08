@@ -4,96 +4,430 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Charleston Catering | Southern Elite Catering</title>
-  <meta name="description" content="Southern Elite Catering provides full-service food and drink catering across Charleston, SC and the Lowcountry. Request a quote for weddings, corporate events, and private parties." />
+  <meta
+    name="description"
+    content="Southern Elite Catering provides full-service food and drink catering across Charleston, SC and the Lowcountry. Request catering for weddings, corporate events, and private parties."
+  />
   <link rel="canonical" href="#" />
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    .hero {
-      background: linear-gradient(120deg, rgba(0,0,0,.65), rgba(0,0,0,.35)), url("https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=2400&q=60");
-      background-size: cover;
-      background-position: center;
-      min-height: 70vh;
+    :root{
+      --cream:#f5efe6;
+      --sand:#eadfce;
+      --taupe:#d6cab8;
+      --brown:#7b5d45;
+      --dark:#1b1612;
+      --muted:#6f655c;
+      --white:#ffffff;
+      --line:rgba(27,22,18,.10);
     }
-    .section-pad { padding: 72px 0; }
-    .soft-card { border: 1px solid rgba(0,0,0,.08); border-radius: 1rem; }
-    .img-tile {
-      border-radius: 1rem;
-      overflow: hidden;
-      min-height: 260px;
-      background: #f2f2f2;
-      position: relative;
+
+    body{
+      font-family:'Inter', sans-serif;
+      color:var(--dark);
+      background:#fbf8f3;
+      line-height:1.7;
     }
-    .img-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .badge-soft {
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.25);
-      color: #fff;
+
+    h1,h2,h3,h4,h5,h6,
+    .display-font{
+      font-family:'Cormorant Garamond', serif;
+      letter-spacing:.2px;
     }
-    .map-embed {
-      width: 100%;
-      height: 420px;
-      border: 0;
-      border-radius: 1rem;
+
+    .navbar{
+      background:rgba(251,248,243,.92);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid var(--line);
     }
-    .mini-photo {
-      border-radius: 1rem;
-      overflow: hidden;
-      min-height: 420px;
-      background: #f2f2f2;
+
+    .navbar-brand{
+      font-family:'Cormorant Garamond', serif;
+      font-size:1.7rem;
+      font-weight:700;
+      color:var(--dark)!important;
     }
-    .mini-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    footer a { text-decoration: none; }
+
+    .nav-link{
+      color:var(--dark)!important;
+      font-weight:500;
+    }
+
+    .section-pad{
+      padding:90px 0;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:.76rem;
+      font-weight:700;
+      color:var(--brown);
+      margin-bottom:1rem;
+    }
+
+    .hero-wrap{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      background:
+        linear-gradient(to right, rgba(18,14,11,.76) 0%, rgba(18,14,11,.45) 42%, rgba(18,14,11,.16) 100%),
+        url("https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=2000&q=80") center/cover no-repeat;
+      position:relative;
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.18);
+      backdrop-filter:blur(10px);
+      border-radius:1.5rem;
+      padding:2rem;
+      color:#fff;
+    }
+
+    .hero-title{
+      font-size:clamp(3rem, 7vw, 5.8rem);
+      line-height:.95;
+      color:#fff;
+      margin-bottom:1rem;
+    }
+
+    .hero-sub{
+      color:rgba(255,255,255,.86);
+      max-width:42rem;
+      font-size:1.05rem;
+    }
+
+    .btn-soft{
+      background:var(--white);
+      color:var(--dark);
+      border:none;
+      border-radius:999px;
+      padding:.95rem 1.5rem;
+      font-weight:600;
+    }
+
+    .btn-soft:hover{
+      background:var(--cream);
+      color:var(--dark);
+    }
+
+    .btn-outline-soft{
+      border:1px solid rgba(255,255,255,.4);
+      color:#fff;
+      border-radius:999px;
+      padding:.95rem 1.5rem;
+      font-weight:600;
+    }
+
+    .btn-outline-soft:hover{
+      background:rgba(255,255,255,.12);
+      color:#fff;
+    }
+
+    .split-image{
+      min-height:620px;
+      border-radius:1.75rem;
+      overflow:hidden;
+      background:#ddd;
+      box-shadow:0 20px 60px rgba(0,0,0,.08);
+    }
+
+    .split-image img,
+    .gallery-tile img,
+    .side-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .content-panel{
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:1.5rem;
+      padding:2rem;
+      height:100%;
+      box-shadow:0 10px 30px rgba(0,0,0,.04);
+    }
+
+    .service-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+
+    .service-list li{
+      padding:.85rem 0;
+      border-bottom:1px solid var(--line);
+      font-weight:500;
+    }
+
+    .service-list li:last-child{
+      border-bottom:none;
+    }
+
+    .band{
+      background:var(--cream);
+    }
+
+    .gallery-tile{
+      position:relative;
+      min-height:420px;
+      border-radius:1.5rem;
+      overflow:hidden;
+      background:#ddd;
+    }
+
+    .gallery-label{
+      position:absolute;
+      left:1rem;
+      right:1rem;
+      bottom:1rem;
+      background:rgba(255,255,255,.88);
+      backdrop-filter:blur(8px);
+      border-radius:1rem;
+      padding:1rem 1.1rem;
+    }
+
+    .stat-card{
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:1.25rem;
+      padding:1.5rem;
+      text-align:center;
+      height:100%;
+    }
+
+    .stat-card h3{
+      font-size:2.2rem;
+      margin-bottom:.3rem;
+    }
+
+    .wide-feature{
+      background:var(--dark);
+      color:#fff;
+      border-radius:2rem;
+      overflow:hidden;
+    }
+
+    .wide-feature .feature-copy{
+      padding:3rem;
+    }
+
+    .wide-feature .feature-photo{
+      min-height:100%;
+      height:100%;
+    }
+
+    .faq-wrap .accordion-item{
+      border:1px solid var(--line);
+      border-radius:1rem !important;
+      overflow:hidden;
+      margin-bottom:1rem;
+      background:#fff;
+    }
+
+    .faq-wrap .accordion-button{
+      font-weight:600;
+      box-shadow:none!important;
+      padding:1.2rem 1.25rem;
+      background:#fff;
+      color:var(--dark);
+    }
+
+    .faq-wrap .accordion-button:not(.collapsed){
+      background:#fff;
+      color:var(--dark);
+    }
+
+    .faq-wrap .accordion-body{
+      color:var(--muted);
+    }
+
+    .map-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:1.5rem;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,.04);
+    }
+
+    .map-embed{
+      width:100%;
+      height:520px;
+      border:0;
+      display:block;
+    }
+
+    .request-shell{
+      background:linear-gradient(180deg, #f7f1e9, #fff);
+      border:1px solid var(--line);
+      border-radius:2rem;
+      padding:1.25rem;
+      box-shadow:0 14px 40px rgba(0,0,0,.05);
+    }
+
+    .side-photo{
+      min-height:100%;
+      height:100%;
+      border-radius:1.4rem;
+      overflow:hidden;
+      background:#ddd;
+    }
+
+    .form-panel{
+      background:#fff;
+      border-radius:1.4rem;
+      padding:2rem;
+      border:1px solid var(--line);
+      height:100%;
+    }
+
+    .form-control,
+    .form-select{
+      border-radius:.9rem;
+      min-height:52px;
+      border:1px solid rgba(27,22,18,.12);
+      padding:.85rem 1rem;
+    }
+
+    textarea.form-control{
+      min-height:130px;
+    }
+
+    .btn-brand{
+      background:var(--dark);
+      color:#fff;
+      border:none;
+      border-radius:999px;
+      padding:1rem 1.4rem;
+      font-weight:600;
+    }
+
+    .btn-brand:hover{
+      background:#302821;
+      color:#fff;
+    }
+
+    footer{
+      background:#191511;
+      color:rgba(255,255,255,.86);
+    }
+
+    footer a{
+      color:rgba(255,255,255,.82);
+      text-decoration:none;
+    }
+
+    footer a:hover{
+      color:#fff;
+    }
+
+    .footer-title{
+      font-family:'Cormorant Garamond', serif;
+      font-size:1.8rem;
+      color:#fff;
+    }
+
+    .service-grid span{
+      display:block;
+      padding:.45rem 0;
+      color:rgba(255,255,255,.76);
+    }
+
+    .muted{
+      color:var(--muted);
+    }
+
+    @media (max-width: 991.98px){
+      .hero-wrap{
+        min-height:auto;
+        padding:110px 0 70px;
+        background:
+          linear-gradient(to bottom, rgba(18,14,11,.74), rgba(18,14,11,.45)),
+          url("https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=2000&q=80") center/cover no-repeat;
+      }
+
+      .hero-card{
+        margin-top:1rem;
+      }
+
+      .split-image{
+        min-height:420px;
+      }
+
+      .gallery-tile{
+        min-height:320px;
+      }
+
+      .map-embed{
+        height:380px;
+      }
+    }
   </style>
 </head>
-
 <body>
 
-  <!-- NAV (optional but helpful) -->
-  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand fw-semibold" href="#">Southern Elite Catering</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#">Southern Elite Catering</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div id="navMain" class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#gallery">Photos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-          <li class="nav-item"><a class="nav-link" href="#request">Request</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-dark rounded-pill px-4" href="#request">Request Pricing</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- HERO DIV -->
-  <header class="hero d-flex align-items-center text-white">
+  <!-- HERO -->
+  <header class="hero-wrap">
     <div class="container">
-      <div class="row align-items-center g-4">
+      <div class="row align-items-end g-4">
         <div class="col-lg-7">
-          <span class="badge rounded-pill badge-soft px-3 py-2 mb-3">Charleston Catering • Food & Drink • Full Service</span>
-          <h1 class="display-5 fw-bold mb-3">Charleston Catering for Weddings, Corporate Events, and Private Parties</h1>
-          <p class="lead mb-4">
-            Southern Elite Catering brings polished service, crowd-pleasing menus, and professional bar setups to events across
-            Charleston, SC and the Lowcountry. From passed hors d’oeuvres to buffet spreads and beverage catering, we’ll help you
-            host with confidence.
+          <span class="eyebrow text-white" style="color:#f0dcc6!important;">Charleston, South Carolina Catering</span>
+          <h1 class="hero-title">Catering with a polished Lowcountry feel.</h1>
+          <p class="hero-sub mb-4">
+            Southern Elite Catering brings full-service food and drink catering to weddings, private parties,
+            business gatherings, and social events across Charleston, SC. Built for hosts who want warm hospitality,
+            beautiful presentation, and a team that makes the day feel effortless.
           </p>
-          <div class="d-flex flex-wrap gap-2">
-            <a href="#request" class="btn btn-light btn-lg">Request a Quote</a>
-            <a href="#services" class="btn btn-outline-light btn-lg">Explore Services</a>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#request" class="btn btn-soft">Request a Quote</a>
+            <a href="#about" class="btn btn-outline-soft">Explore the Service</a>
           </div>
-          <div class="mt-4 small text-white-50">
-            Serving Downtown Charleston, Mount Pleasant, West Ashley, James Island, North Charleston, Daniel Island & beyond.
+
+          <div class="mt-4 text-white-50 small">
+            Serving Downtown Charleston, Mount Pleasant, West Ashley, James Island, Daniel Island,
+            North Charleston, Folly Beach, Isle of Palms, Summerville, and nearby Lowcountry communities.
           </div>
         </div>
 
         <div class="col-lg-5">
-          <div class="p-4 bg-dark bg-opacity-50 soft-card">
-            <div class="fw-semibold mb-2">Fast Quote Request</div>
-            <div class="small text-white-50 mb-3">Tell us your date + guest count and we’ll follow up.</div>
+          <div class="hero-card">
+            <div class="eyebrow text-white mb-2" style="color:#fff!important;">Fast Event Inquiry</div>
+            <h3 class="display-font mb-3" style="font-size:2.25rem;">Tell us about your event.</h3>
             <form>
               <div class="row g-2">
                 <div class="col-12">
@@ -101,9 +435,6 @@
                 </div>
                 <div class="col-12">
                   <input class="form-control" type="email" placeholder="Email" aria-label="Email">
-                </div>
-                <div class="col-12">
-                  <input class="form-control" type="tel" placeholder="Phone" aria-label="Phone">
                 </div>
                 <div class="col-md-6">
                   <input class="form-control" type="date" aria-label="Event date">
@@ -115,50 +446,59 @@
                   <select class="form-select" aria-label="Event type">
                     <option selected>Event type</option>
                     <option>Wedding</option>
-                    <option>Corporate</option>
+                    <option>Corporate Event</option>
                     <option>Private Party</option>
-                    <option>Nonprofit / School</option>
+                    <option>Brunch Gathering</option>
+                    <option>Holiday Event</option>
                     <option>Other</option>
                   </select>
                 </div>
-                <div class="col-12">
-                  <button class="btn btn-primary w-100" type="submit">Send Request</button>
+                <div class="col-12 d-grid mt-2">
+                  <button class="btn btn-light rounded-pill py-3 fw-semibold" type="submit">Send Inquiry</button>
                 </div>
               </div>
-              <div class="small text-white-50 mt-2">You can swap this form for your CRM embed later.</div>
             </form>
+            <div class="small mt-3 text-white-50">
+              Replace this form with your CRM, Jotform, HubSpot, or Tally embed later.
+            </div>
           </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- TEXT DIV WITH CONTENT -->
-  <section id="services" class="section-pad">
+  <!-- INTRO SPLIT -->
+  <section id="about" class="section-pad">
     <div class="container">
-      <div class="row g-4 align-items-start">
-        <div class="col-lg-7">
-          <h2 class="fw-bold mb-3">A Complete Catering Team for Charleston Events</h2>
-          <p class="mb-3">
-            When you’re searching for <strong>Charleston catering</strong>, you want more than good food—you want the entire experience
-            to feel seamless. Southern Elite Catering offers flexible menu options, trained staff, and coordinated service so your event
-            runs smoothly from setup to cleanup.
-          </p>
-          <p class="mb-0">
-            We cater celebrations of all sizes across the Charleston area, including weddings, rehearsal dinners, corporate lunches,
-            grand openings, holiday parties, and backyard gatherings. Choose from buffet service, plated service (when available),
-            stations, or passed appetizers—then add beverage service to round out the event.
-          </p>
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6">
+          <div class="split-image">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80" alt="Elegant food and drink catering setup">
+          </div>
         </div>
-        <div class="col-lg-5">
-          <div class="p-4 soft-card bg-light">
-            <div class="fw-semibold mb-2">Popular Catering Options</div>
-            <ul class="mb-0">
-              <li>Appetizers & small plates</li>
-              <li>Buffet spreads & carving stations</li>
+        <div class="col-lg-6">
+          <span class="eyebrow">Charleston Catering, Refined</span>
+          <h2 class="display-font mb-3" style="font-size:3.2rem;">A local catering company built for memorable events.</h2>
+          <p class="muted mb-4">
+            When people search for Charleston catering, they are usually looking for more than trays of food.
+            They want a team that understands timing, guest flow, presentation, and service. Southern Elite Catering
+            is designed around that full experience. We help clients host weddings, cocktail hours, office events,
+            private dinners, showers, and celebrations with food and beverage service that feels thoughtful from start to finish.
+          </p>
+          <p class="muted mb-4">
+            Our style leans polished and inviting. Whether your event is coastal and casual or elevated and formal,
+            we focus on clean setup, dependable staffing, and menus that fit the tone of the occasion.
+            The goal is simple: make your Charleston event feel easy to host and enjoyable to attend.
+          </p>
+
+          <div class="content-panel">
+            <h3 class="display-font mb-3" style="font-size:2rem;">Popular service options</h3>
+            <ul class="service-list">
               <li>Brunch, lunch, and dinner catering</li>
-              <li>Desserts, coffee, and non-alcoholic beverage service</li>
-              <li>Bar setup support (ice, mixers, garnishes, staffing add-ons)</li>
+              <li>Passed appetizers and cocktail-hour service</li>
+              <li>Buffet presentations and station-style setups</li>
+              <li>Desserts, coffee service, and beverage support</li>
+              <li>Wedding, corporate, and private event catering</li>
             </ul>
           </div>
         </div>
@@ -166,165 +506,216 @@
     </div>
   </section>
 
-  <!-- PHOTO DIV FOR 3 PHOTOS COLUMNS -->
-  <section id="gallery" class="section-pad bg-light">
+  <!-- GALLERY -->
+  <section id="gallery" class="section-pad band">
     <div class="container">
-      <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-4">
-        <div>
-          <h2 class="fw-bold mb-1">Event-Ready Presentation</h2>
-          <div class="text-muted">Swap these placeholders with your real catering photos.</div>
+      <div class="row align-items-end mb-5">
+        <div class="col-lg-8">
+          <span class="eyebrow">Visual Style</span>
+          <h2 class="display-font mb-2" style="font-size:3rem;">Presentation matters as much as the menu.</h2>
+          <p class="muted mb-0">
+            Use this section for your real event photos later. The layout is meant to feel upscale, image-led, and close in spirit
+            to the inspiration site without copying it.
+          </p>
         </div>
-        <a class="btn btn-outline-secondary" href="#request">Get Pricing</a>
+        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+          <a href="#request" class="btn btn-brand">Get Catering Pricing</a>
+        </div>
       </div>
 
       <div class="row g-4">
-        <div class="col-md-4">
-          <div class="img-tile">
-            <!-- Replace src with your photo -->
-            <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1200&q=60" alt="Charleston catering appetizer display">
-          </div>
-          <div class="mt-3">
-            <div class="fw-semibold">Passed Appetizers</div>
-            <div class="text-muted small">Perfect for cocktail hours and social events.</div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="img-tile">
-            <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1200&q=60" alt="Charleston catering buffet setup">
-          </div>
-          <div class="mt-3">
-            <div class="fw-semibold">Buffet & Stations</div>
-            <div class="text-muted small">Efficient service for medium to large guest counts.</div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="img-tile">
-            <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1200&q=60" alt="Charleston drink catering and bar service">
-          </div>
-          <div class="mt-3">
-            <div class="fw-semibold">Food + Drink</div>
-            <div class="text-muted small">Add beverage support to keep everything in one place.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TEXT DIV -->
-  <section class="section-pad">
-    <div class="container">
-      <div class="row g-4 align-items-center">
-        <div class="col-lg-6">
-          <h2 class="fw-bold mb-3">Local, Reliable, and Built for Scale</h2>
-          <p class="mb-3">
-            Charleston events move fast—venues, timelines, guest arrivals, and weather can all shift the plan. Our approach is simple:
-            communicate clearly, arrive prepared, and deliver consistent service. We’ll help you choose a menu that fits your guest count,
-            venue layout, and the vibe you’re going for—elegant, casual, coastal, or classic.
-          </p>
-          <p class="mb-0">
-            Need something specific? We can tailor options for dietary preferences and event flow. If you already have a vision,
-            we’ll match it with a practical plan and a team that can execute.
-          </p>
-        </div>
-        <div class="col-lg-6">
-          <div class="p-4 soft-card">
-            <div class="fw-semibold mb-2">What we help with</div>
-            <div class="row g-2 small">
-              <div class="col-6"><span class="text-muted">•</span> Menu planning</div>
-              <div class="col-6"><span class="text-muted">•</span> Staffing add-ons</div>
-              <div class="col-6"><span class="text-muted">•</span> Setup & breakdown</div>
-              <div class="col-6"><span class="text-muted">•</span> Rental coordination</div>
-              <div class="col-6"><span class="text-muted">•</span> Beverage support</div>
-              <div class="col-6"><span class="text-muted">•</span> Timelines & pacing</div>
+        <div class="col-lg-4">
+          <div class="gallery-tile">
+            <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1200&q=80" alt="Passed appetizers for Charleston event catering">
+            <div class="gallery-label">
+              <div class="fw-semibold">Cocktail-Hour Catering</div>
+              <div class="small muted">Passed bites, mingling-friendly service, and polished presentation.</div>
             </div>
-            <hr class="my-3">
-            <div class="small text-muted">Tip: Add your “minimums,” “service styles,” and “sample menus” here later for stronger lead quality.</div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="gallery-tile">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80" alt="Buffet spread for catered event">
+            <div class="gallery-label">
+              <div class="fw-semibold">Buffets & Display Tables</div>
+              <div class="small muted">Designed for efficient service and a clean guest experience.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="gallery-tile">
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80" alt="Drink catering and bar service setup">
+            <div class="gallery-label">
+              <div class="fw-semibold">Food + Drink Service</div>
+              <div class="small muted">Keep the event streamlined with one team coordinating both.</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DIV WITH MAP RIGHT + FAQ LEFT (DROPDOWNS) -->
-  <section id="faq" class="section-pad bg-light">
+  <!-- STATS / EXPERIENCE -->
+  <section id="experience" class="section-pad">
     <div class="container">
-      <div class="row g-4 align-items-start">
-        <!-- FAQ LEFT -->
-        <div class="col-lg-6">
-          <h2 class="fw-bold mb-3">Charleston Catering FAQ</h2>
+      <div class="text-center mb-5">
+        <span class="eyebrow">Why It Works</span>
+        <h2 class="display-font mb-3" style="font-size:3rem;">Built around hospitality, not just delivery.</h2>
+        <p class="muted mx-auto" style="max-width:760px;">
+          Charleston events often move quickly between setup, photos, speeches, arrivals, and shifting timelines.
+          Our catering approach is designed to support that reality with a team that communicates clearly and executes consistently.
+        </p>
+      </div>
+
+      <div class="row g-4 mb-5">
+        <div class="col-md-6 col-xl-3">
+          <div class="stat-card">
+            <h3 class="display-font">01</h3>
+            <div class="fw-semibold mb-2">Menu Planning</div>
+            <div class="small muted">Choose service styles and menu formats that fit your guest count and venue flow.</div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <div class="stat-card">
+            <h3 class="display-font">02</h3>
+            <div class="fw-semibold mb-2">Professional Setup</div>
+            <div class="small muted">Clean stations, intentional presentation, and a more elevated event look.</div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <div class="stat-card">
+            <h3 class="display-font">03</h3>
+            <div class="fw-semibold mb-2">Service Support</div>
+            <div class="small muted">Helpful staffing, beverage add-ons, and coordinated guest-facing service.</div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <div class="stat-card">
+            <h3 class="display-font">04</h3>
+            <div class="fw-semibold mb-2">Event Flexibility</div>
+            <div class="small muted">Formal or casual, intimate or scaled up, the service adapts to the occasion.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wide-feature">
+        <div class="row g-0 align-items-center">
+          <div class="col-lg-6">
+            <div class="feature-copy">
+              <span class="eyebrow text-white" style="color:#d7b99a!important;">Southern Elite Catering</span>
+              <h2 class="display-font mb-3" style="font-size:3rem;">Local, reliable, and made for Charleston hosts.</h2>
+              <p class="mb-4 text-white-50">
+                From downtown venues and waterfront properties to office spaces, private homes, and Lowcountry event sites,
+                Southern Elite Catering is positioned as a local option for food and drink service across the Charleston area.
+                Use this section to reinforce trust, service range, and the feel of the brand.
+              </p>
+              <div class="row g-3 service-grid">
+                <div class="col-sm-6"><span>• Weddings & rehearsal dinners</span></div>
+                <div class="col-sm-6"><span>• Corporate lunches & mixers</span></div>
+                <div class="col-sm-6"><span>• Showers & milestone parties</span></div>
+                <div class="col-sm-6"><span>• Brunch and daytime events</span></div>
+                <div class="col-sm-6"><span>• Beverage and coffee add-ons</span></div>
+                <div class="col-sm-6"><span>• Flexible Charleston-area coverage</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="feature-photo h-100">
+              <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1400&q=80" alt="Guests enjoying a catered Charleston event" class="w-100 h-100 object-fit-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ + MAP -->
+  <section id="faq" class="section-pad band">
+    <div class="container">
+      <div class="row g-5 align-items-start">
+        <div class="col-lg-6 faq-wrap">
+          <span class="eyebrow">Questions</span>
+          <h2 class="display-font mb-4" style="font-size:3rem;">Charleston catering FAQ</h2>
+
           <div class="accordion" id="faqAccordion">
             <div class="accordion-item">
-              <h3 class="accordion-header" id="q1">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="true" aria-controls="a1">
-                  What types of events do you cater in Charleston?
+              <h3 class="accordion-header" id="faq1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                  What kinds of events do you cater?
                 </button>
               </h3>
-              <div id="a1" class="accordion-collapse collapse show" aria-labelledby="q1" data-bs-parent="#faqAccordion">
+              <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
                 <div class="accordion-body">
-                  We cater weddings, corporate events, private parties, milestone celebrations, holiday events, and community gatherings across Charleston, SC and nearby areas.
+                  Southern Elite Catering is positioned for weddings, corporate events, brunches, cocktail-style gatherings, private dinners,
+                  showers, holiday events, and celebrations throughout Charleston and surrounding Lowcountry areas.
                 </div>
               </div>
             </div>
 
             <div class="accordion-item">
-              <h3 class="accordion-header" id="q2">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2" aria-expanded="false" aria-controls="a2">
-                  Do you offer food and drink catering together?
+              <h3 class="accordion-header" id="faq2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                  Do you offer both food and drink catering?
                 </button>
               </h3>
-              <div id="a2" class="accordion-collapse collapse" aria-labelledby="q2" data-bs-parent="#faqAccordion">
+              <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
                 <div class="accordion-body">
-                  Yes—many clients prefer one team handling both food service and beverage support. You can request appetizers + dinner service, plus add-ons like coffee, non-alcoholic beverages, or bar setup support.
+                  Yes. This page is structured to support both food service and beverage support, including coffee service,
+                  non-alcoholic drinks, and event-friendly bar setup assistance.
                 </div>
               </div>
             </div>
 
             <div class="accordion-item">
-              <h3 class="accordion-header" id="q3">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3" aria-expanded="false" aria-controls="a3">
-                  How far in advance should I book?
+              <h3 class="accordion-header" id="faq3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                  How far in advance should clients book?
                 </button>
               </h3>
-              <div id="a3" class="accordion-collapse collapse" aria-labelledby="q3" data-bs-parent="#faqAccordion">
+              <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
                 <div class="accordion-body">
-                  For peak seasons and weekends, earlier is better. For corporate lunches and smaller events, we can often accommodate shorter timelines depending on availability.
+                  Weekend dates and peak wedding-season dates should ideally be booked as early as possible.
+                  Smaller weekday events may have more flexibility depending on availability.
                 </div>
               </div>
             </div>
 
             <div class="accordion-item">
-              <h3 class="accordion-header" id="q4">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a4" aria-expanded="false" aria-controls="a4">
-                  Can you handle dietary needs?
+              <h3 class="accordion-header" id="faq4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                  Can dietary needs be accommodated?
                 </button>
               </h3>
-              <div id="a4" class="accordion-collapse collapse" aria-labelledby="q4" data-bs-parent="#faqAccordion">
+              <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
                 <div class="accordion-body">
-                  We can plan around common dietary preferences and restrictions. Share your needs in the request form so we can recommend the best options for your guest list.
+                  This layout supports dietary request messaging well. You can note vegetarian, vegan, gluten-aware,
+                  or other common guest needs directly in the inquiry form and customize the copy later.
                 </div>
               </div>
             </div>
 
             <div class="accordion-item">
-              <h3 class="accordion-header" id="q5">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a5" aria-expanded="false" aria-controls="a5">
-                  Do you serve all of Charleston?
+              <h3 class="accordion-header" id="faq5">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+                  What areas do you serve around Charleston?
                 </button>
               </h3>
-              <div id="a5" class="accordion-collapse collapse" aria-labelledby="q5" data-bs-parent="#faqAccordion">
+              <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion">
                 <div class="accordion-body">
-                  Yes—our service area includes Downtown Charleston, Mount Pleasant, West Ashley, James Island, North Charleston, Daniel Island, and nearby Lowcountry communities.
+                  The page supports service areas including Downtown Charleston, Mount Pleasant, West Ashley, James Island,
+                  North Charleston, Daniel Island, Johns Island, Folly Beach, Isle of Palms, Summerville, and nearby communities.
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- MAP RIGHT -->
         <div class="col-lg-6">
-          <h2 class="fw-bold mb-3">Service Area Map</h2>
-          <div class="soft-card p-2 bg-white">
-            <!-- Replace the src with your Google Maps embed (Share > Embed a map) -->
+          <span class="eyebrow">Coverage</span>
+          <h2 class="display-font mb-4" style="font-size:3rem;">Service area map</h2>
+          <div class="map-card">
             <iframe
               class="map-embed"
               loading="lazy"
@@ -332,147 +723,151 @@
               src="https://www.google.com/maps?q=Charleston%2C%20SC&output=embed">
             </iframe>
           </div>
-          <div class="small text-muted mt-2">Replace this with your business map embed once you have it.</div>
+          <div class="small muted mt-3">
+            Replace this with your real business map embed when ready.
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- REQUEST DIV (3 columns: photo, form, photo) -->
+  <!-- REQUEST -->
   <section id="request" class="section-pad">
     <div class="container">
       <div class="text-center mb-5">
-        <h2 class="fw-bold mb-2">Request Charleston Catering Pricing</h2>
-        <p class="text-muted mb-0">Share a few details and we’ll respond with availability and a starting estimate.</p>
+        <span class="eyebrow">Inquiry Form</span>
+        <h2 class="display-font mb-3" style="font-size:3rem;">Request Charleston catering pricing</h2>
+        <p class="muted mb-0">This three-column section keeps the page feeling premium while still collecting leads.</p>
       </div>
 
-      <div class="row g-4 align-items-stretch">
-        <!-- PHOTO LEFT -->
-        <div class="col-lg-3">
-          <div class="mini-photo h-100">
-            <img src="https://images.unsplash.com/photo-1555243896-c709bfa0b564?auto=format&fit=crop&w=1200&q=60" alt="Catering service in Charleston SC">
+      <div class="request-shell">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-3">
+            <div class="side-photo">
+              <img src="https://images.unsplash.com/photo-1555243896-c709bfa0b564?auto=format&fit=crop&w=1200&q=80" alt="Food prepared for Charleston catering">
+            </div>
           </div>
-        </div>
 
-        <!-- FORM CENTER -->
-        <div class="col-lg-6">
-          <div class="p-4 p-md-5 soft-card h-100">
-            <form>
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label class="form-label">Name</label>
-                  <input type="text" class="form-control" placeholder="Your name">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Phone</label>
-                  <input type="tel" class="form-control" placeholder="(###) ###-####">
+          <div class="col-lg-6">
+            <div class="form-panel">
+              <form>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" placeholder="Your name">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Phone</label>
+                    <input type="tel" class="form-control" placeholder="(###) ###-####">
+                  </div>
+
+                  <div class="col-md-7">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="you@email.com">
+                  </div>
+                  <div class="col-md-5">
+                    <label class="form-label">Guest Count</label>
+                    <input type="number" min="1" class="form-control" placeholder="e.g. 80">
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label">Event Date</label>
+                    <input type="date" class="form-control">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Location / Area</label>
+                    <input type="text" class="form-control" placeholder="Downtown Charleston, Mount Pleasant, etc.">
+                  </div>
+
+                  <div class="col-12">
+                    <label class="form-label">What do you need catered?</label>
+                    <select class="form-select">
+                      <option selected>Select a service</option>
+                      <option>Wedding Catering</option>
+                      <option>Corporate Catering</option>
+                      <option>Private Party Catering</option>
+                      <option>Brunch Catering</option>
+                      <option>Beverage / Coffee Service</option>
+                      <option>Appetizers + Full Meal</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                    <label class="form-label">Event Notes</label>
+                    <textarea class="form-control" placeholder="Share timing, venue details, menu goals, dietary needs, and the overall style of the event."></textarea>
+                  </div>
+
+                  <div class="col-12 d-grid pt-2">
+                    <button type="submit" class="btn btn-brand btn-lg">Request Quote</button>
+                  </div>
                 </div>
 
-                <div class="col-md-7">
-                  <label class="form-label">Email</label>
-                  <input type="email" class="form-control" placeholder="you@email.com">
+                <div class="small muted mt-3">
+                  You can replace this with a live embedded lead form later.
                 </div>
-                <div class="col-md-5">
-                  <label class="form-label">Guest Count</label>
-                  <input type="number" min="1" class="form-control" placeholder="e.g., 75">
-                </div>
-
-                <div class="col-md-6">
-                  <label class="form-label">Event Date</label>
-                  <input type="date" class="form-control">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Event Location / Area</label>
-                  <input type="text" class="form-control" placeholder="Downtown, Mount Pleasant, etc.">
-                </div>
-
-                <div class="col-12">
-                  <label class="form-label">What do you need catered?</label>
-                  <select class="form-select">
-                    <option selected>Select a service</option>
-                    <option>Appetizers + Dinner</option>
-                    <option>Buffet Catering</option>
-                    <option>Stations / Food Tables</option>
-                    <option>Brunch / Lunch Catering</option>
-                    <option>Drink / Beverage Support</option>
-                    <option>Not sure yet</option>
-                  </select>
-                </div>
-
-                <div class="col-12">
-                  <label class="form-label">Notes</label>
-                  <textarea class="form-control" rows="4" placeholder="Tell us about the vibe, venue, dietary needs, timing, and any menu ideas."></textarea>
-                </div>
-
-                <div class="col-12 d-grid">
-                  <button type="submit" class="btn btn-primary btn-lg">Request Quote</button>
-                </div>
-              </div>
-              <div class="small text-muted mt-3">
-                Tip: Replace this form with your CRM embed (HubSpot, Jotform, Tally, etc.) when you’re ready.
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
-        </div>
 
-        <!-- PHOTO RIGHT -->
-        <div class="col-lg-3">
-          <div class="mini-photo h-100">
-            <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1200&q=60" alt="Charleston catering buffet table">
+          <div class="col-lg-3">
+            <div class="side-photo">
+              <img src="https://images.unsplash.com/photo-1528605105345-5344ea20e269?auto=format&fit=crop&w=1200&q=80" alt="Guests at a catered private event">
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER: AREAS SERVICED -->
-  <footer class="py-5 border-top bg-white">
+  <!-- FOOTER -->
+  <footer class="py-5">
     <div class="container">
-      <div class="row g-4">
+      <div class="row g-4 align-items-start">
         <div class="col-lg-4">
-          <div class="fw-semibold">Southern Elite Catering</div>
-          <div class="text-muted small">Food & Drink Catering • Charleston, South Carolina</div>
-          <div class="text-muted small mt-2">Add your phone, email, and address here when ready.</div>
+          <div class="footer-title mb-2">Southern Elite Catering</div>
+          <div class="small text-white-50 mb-3">
+            Charleston catering for weddings, corporate events, brunches, and private parties.
+          </div>
+          <div class="small text-white-50">
+            Add your phone number, service address, and email here when the brand details are finalized.
+          </div>
         </div>
 
-        <div class="col-lg-8">
-          <div class="fw-semibold mb-2">Areas We Service</div>
-          <div class="text-muted small mb-3">
-            Charleston catering coverage across the peninsula, beaches, and nearby Lowcountry communities.
+        <div class="col-lg-3">
+          <div class="fw-semibold text-white mb-3">Quick Links</div>
+          <div class="d-flex flex-column gap-2 small">
+            <a href="#about">About</a>
+            <a href="#gallery">Photos</a>
+            <a href="#experience">Experience</a>
+            <a href="#faq">FAQ</a>
+            <a href="#request">Request Pricing</a>
           </div>
+        </div>
 
-          <div class="row row-cols-2 row-cols-md-3 g-2 small">
+        <div class="col-lg-5">
+          <div class="fw-semibold text-white mb-3">Areas Served</div>
+          <div class="row row-cols-2 row-cols-md-3 g-2 small text-white-50">
             <div class="col">Downtown Charleston</div>
             <div class="col">Mount Pleasant</div>
             <div class="col">West Ashley</div>
             <div class="col">James Island</div>
             <div class="col">North Charleston</div>
             <div class="col">Daniel Island</div>
+            <div class="col">Johns Island</div>
             <div class="col">Folly Beach</div>
             <div class="col">Isle of Palms</div>
             <div class="col">Sullivan’s Island</div>
-            <div class="col">Johns Island</div>
-            <div class="col">Hanahan</div>
-            <div class="col">Goose Creek</div>
             <div class="col">Summerville</div>
-            <div class="col">Ladson</div>
-            <div class="col">Moncks Corner</div>
-            <div class="col">Kiawah Island</div>
-            <div class="col">Seabrook Island</div>
-            <div class="col">Hollywood</div>
+            <div class="col">Goose Creek</div>
           </div>
         </div>
       </div>
 
-      <hr class="my-4">
+      <hr class="border-secondary my-4">
 
-      <div class="d-flex flex-wrap justify-content-between gap-2 small text-muted">
+      <div class="d-flex flex-wrap justify-content-between gap-2 small text-white-50">
         <div>© <span id="year"></span> Southern Elite Catering. All rights reserved.</div>
-        <div>
-          <a class="text-muted me-3" href="#services">Services</a>
-          <a class="text-muted me-3" href="#faq">FAQ</a>
-          <a class="text-muted" href="#request">Request</a>
-        </div>
+        <div>Charleston, South Carolina • Local Catering Brand</div>
       </div>
     </div>
   </footer>

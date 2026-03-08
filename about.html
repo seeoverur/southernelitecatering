@@ -1,198 +1,641 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>About Southern Elite Catering | Charleston Catering</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | Southern Elite Catering</title>
+  <meta
+    name="description"
+    content="Learn more about Southern Elite Catering, a Charleston, SC catering company serving weddings, corporate events, private parties, and Lowcountry gatherings with polished food and drink service."
+  />
+  <link rel="canonical" href="#" />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <style>
-      .section-pad {
-        padding: 70px 0;
-      }
-      .hero-about {
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --cream:#f5efe6;
+      --sand:#eadfce;
+      --taupe:#d6cab8;
+      --brown:#7b5d45;
+      --dark:#1b1612;
+      --muted:#6f655c;
+      --white:#ffffff;
+      --line:rgba(27,22,18,.10);
+    }
+
+    body{
+      font-family:'Inter', sans-serif;
+      color:var(--dark);
+      background:#fbf8f3;
+      line-height:1.7;
+    }
+
+    h1,h2,h3,h4,h5,h6,
+    .display-font{
+      font-family:'Cormorant Garamond', serif;
+      letter-spacing:.2px;
+    }
+
+    .navbar{
+      background:rgba(251,248,243,.92);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .navbar-brand{
+      font-family:'Cormorant Garamond', serif;
+      font-size:1.7rem;
+      font-weight:700;
+      color:var(--dark)!important;
+    }
+
+    .nav-link{
+      color:var(--dark)!important;
+      font-weight:500;
+    }
+
+    .section-pad{
+      padding:90px 0;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:.76rem;
+      font-weight:700;
+      color:var(--brown);
+      margin-bottom:1rem;
+    }
+
+    .page-hero{
+      min-height:78vh;
+      display:flex;
+      align-items:center;
+      background:
+        linear-gradient(to right, rgba(18,14,11,.78) 0%, rgba(18,14,11,.46) 45%, rgba(18,14,11,.16) 100%),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=80") center/cover no-repeat;
+      position:relative;
+    }
+
+    .hero-title{
+      font-size:clamp(3rem, 7vw, 5.5rem);
+      line-height:.95;
+      color:#fff;
+      margin-bottom:1rem;
+    }
+
+    .hero-sub{
+      color:rgba(255,255,255,.86);
+      max-width:42rem;
+      font-size:1.05rem;
+    }
+
+    .hero-note{
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.18);
+      backdrop-filter:blur(10px);
+      border-radius:1.5rem;
+      padding:1.75rem;
+      color:#fff;
+    }
+
+    .btn-brand{
+      background:var(--dark);
+      color:#fff;
+      border:none;
+      border-radius:999px;
+      padding:1rem 1.45rem;
+      font-weight:600;
+    }
+
+    .btn-brand:hover{
+      background:#302821;
+      color:#fff;
+    }
+
+    .btn-light-pill{
+      background:#fff;
+      color:var(--dark);
+      border:none;
+      border-radius:999px;
+      padding:1rem 1.45rem;
+      font-weight:600;
+    }
+
+    .btn-light-pill:hover{
+      background:var(--cream);
+      color:var(--dark);
+    }
+
+    .split-image,
+    .stack-image,
+    .quote-image{
+      border-radius:1.75rem;
+      overflow:hidden;
+      background:#ddd;
+      box-shadow:0 20px 60px rgba(0,0,0,.08);
+    }
+
+    .split-image{ min-height:620px; }
+    .stack-image{ min-height:300px; }
+    .quote-image{ min-height:100%; }
+
+    .split-image img,
+    .stack-image img,
+    .quote-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .content-panel{
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:1.5rem;
+      padding:2rem;
+      height:100%;
+      box-shadow:0 10px 30px rgba(0,0,0,.04);
+    }
+
+    .soft-band{
+      background:var(--cream);
+    }
+
+    .icon-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:1.35rem;
+      padding:1.75rem;
+      height:100%;
+      box-shadow:0 10px 26px rgba(0,0,0,.04);
+    }
+
+    .icon-box{
+      width:54px;
+      height:54px;
+      border-radius:50%;
+      background:var(--sand);
+      color:var(--dark);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      margin-bottom:1rem;
+    }
+
+    .numbers-card{
+      background:var(--dark);
+      color:#fff;
+      border-radius:1.8rem;
+      padding:2rem;
+      height:100%;
+    }
+
+    .numbers-card .small{
+      color:rgba(255,255,255,.72);
+    }
+
+    .stat{
+      padding:1rem 0;
+      border-bottom:1px solid rgba(255,255,255,.12);
+    }
+
+    .stat:last-child{
+      border-bottom:none;
+      padding-bottom:0;
+    }
+
+    .stat h3{
+      font-size:2.15rem;
+      margin-bottom:.2rem;
+    }
+
+    .quote-wrap{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:2rem;
+      overflow:hidden;
+      box-shadow:0 14px 40px rgba(0,0,0,.05);
+    }
+
+    .quote-copy{
+      padding:3rem;
+    }
+
+    .service-list{
+      list-style:none;
+      margin:0;
+      padding:0;
+    }
+
+    .service-list li{
+      padding:.85rem 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .service-list li:last-child{
+      border-bottom:none;
+    }
+
+    footer{
+      background:#191511;
+      color:rgba(255,255,255,.86);
+    }
+
+    footer a{
+      color:rgba(255,255,255,.82);
+      text-decoration:none;
+    }
+
+    footer a:hover{
+      color:#fff;
+    }
+
+    .footer-title{
+      font-family:'Cormorant Garamond', serif;
+      font-size:1.8rem;
+      color:#fff;
+    }
+
+    .muted{
+      color:var(--muted);
+    }
+
+    @media (max-width: 991.98px){
+      .page-hero{
+        min-height:auto;
+        padding:110px 0 70px;
         background:
-          linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.35)),
-          url("https://images.unsplash.com/photo-1555243896-c709bfa0b564?auto=format&fit=crop&w=2200&q=60");
-        background-size: cover;
-        background-position: center;
-        min-height: 45vh;
-        color: white;
-        display: flex;
-        align-items: center;
+          linear-gradient(to bottom, rgba(18,14,11,.76), rgba(18,14,11,.44)),
+          url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=80") center/cover no-repeat;
       }
-    </style>
-  </head>
 
-  <body>
-    <!-- NAV -->
-    <nav class="navbar navbar-expand-lg bg-white border-bottom">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html"
-          >Southern Elite Catering</a
-        >
+      .split-image{
+        min-height:420px;
+      }
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navMain"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      .quote-copy{
+        padding:2rem;
+      }
+    }
+  </style>
+</head>
+<body>
 
-        <div class="collapse navbar-collapse" id="navMain">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="about.html">About</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-          </ul>
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Southern Elite Catering</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#gallery">Photos</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-dark rounded-pill px-4" href="index.html#request">Request Pricing</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="page-hero">
+    <div class="container">
+      <div class="row align-items-end g-4">
+        <div class="col-lg-7">
+          <span class="eyebrow text-white" style="color:#f0dcc6!important;">About Southern Elite Catering</span>
+          <h1 class="hero-title">A Charleston catering company shaped by hospitality.</h1>
+          <p class="hero-sub mb-4">
+            Southern Elite Catering is built around the idea that great catering should feel seamless,
+            welcoming, and well considered. We serve Charleston, South Carolina with food and drink
+            catering designed for weddings, private gatherings, business events, and special occasions
+            that deserve a polished local touch.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="index.html#request" class="btn btn-light-pill">Request a Quote</a>
+            <a href="#story" class="btn btn-outline-light rounded-pill px-4 py-3">Read Our Story</a>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="hero-note">
+            <div class="eyebrow text-white mb-2" style="color:#fff!important;">Charleston, SC</div>
+            <h3 class="display-font mb-3" style="font-size:2.2rem;">Local service with a refined event feel.</h3>
+            <p class="mb-0 text-white-50">
+              From downtown venues and waterfront celebrations to corporate functions and private homes,
+              our goal is to help Charleston hosts create events that look beautiful, run smoothly,
+              and feel memorable for every guest.
+            </p>
+          </div>
         </div>
       </div>
-    </nav>
+    </div>
+  </header>
 
-    <!-- HERO -->
-    <section class="hero-about text-center">
-      <div class="container">
-        <h1 class="display-5 fw-bold">About Southern Elite Catering</h1>
-        <p class="lead">
-          Flexible Charleston catering for every type of event and group.
+  <!-- STORY SECTION -->
+  <section id="story" class="section-pad">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6">
+          <div class="split-image">
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=80" alt="Charleston catering team preparing an event">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span class="eyebrow">Our Story</span>
+          <h2 class="display-font mb-3" style="font-size:3.1rem;">Designed for events that need more than just food delivery.</h2>
+          <p class="muted mb-4">
+            Southern Elite Catering was created with a simple vision: offer Charleston clients a catering
+            company that feels both elevated and approachable. In a city known for hospitality, entertaining,
+            and memorable gatherings, catering should support the full atmosphere of the event instead of
+            feeling like an afterthought.
+          </p>
+          <p class="muted mb-4">
+            That means paying attention to timing, setup, flow, presentation, and the details guests notice.
+            Whether the event is a wedding reception, a corporate lunch, a brunch celebration, or a private party,
+            the goal is to provide food and drink service that fits the moment and makes hosting easier.
+          </p>
+
+          <div class="content-panel">
+            <h3 class="display-font mb-3" style="font-size:2rem;">What defines the brand</h3>
+            <ul class="service-list">
+              <li>Thoughtful service with a polished Charleston feel</li>
+              <li>Flexible catering for weddings, business events, and private parties</li>
+              <li>Food and beverage support designed around guest experience</li>
+              <li>Presentation that feels clean, modern, and event-ready</li>
+              <li>Local service across Charleston and the surrounding Lowcountry</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section-pad soft-band">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="eyebrow">Why Clients Choose Us</span>
+        <h2 class="display-font mb-3" style="font-size:3rem;">Built around the details that make events feel easy.</h2>
+        <p class="muted mx-auto" style="max-width:760px;">
+          The best catering service is not only about flavor. It is also about pacing, communication,
+          appearance, reliability, and helping the host feel confident throughout the event.
         </p>
       </div>
-    </section>
 
-    <!-- ABOUT CONTENT -->
-    <section class="section-pad">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <h2 class="fw-bold mb-4">Our Mission</h2>
-
-            <p>
-              Southern Elite Catering was created with one simple goal in mind:
-              to make professional
-              <strong>Charleston catering</strong> accessible to all types of
-              groups and events across the Lowcountry. From small gatherings to
-              large celebrations, our mission is to provide reliable food and
-              drink catering that helps hosts focus on their guests rather than
-              the logistics of the event.
+      <div class="row g-4">
+        <div class="col-md-6 col-xl-3">
+          <div class="icon-card">
+            <div class="icon-box">01</div>
+            <h3 class="display-font mb-2" style="font-size:2rem;">Presentation</h3>
+            <p class="muted mb-0">
+              We believe catering should look as good as it tastes, with setups that feel intentional and event-appropriate.
             </p>
+          </div>
+        </div>
 
-            <p>
-              Charleston is known for its hospitality, food culture, and social
-              events, and we believe catering should reflect that same spirit.
-              Our team works to deliver meals, service, and presentation that
-              fit the tone of each event—whether it is formal, relaxed,
-              corporate, or celebratory.
+        <div class="col-md-6 col-xl-3">
+          <div class="icon-card">
+            <div class="icon-box">02</div>
+            <h3 class="display-font mb-2" style="font-size:2rem;">Hospitality</h3>
+            <p class="muted mb-0">
+              Service should feel warm, calm, and professional, especially during important moments and busy timelines.
             </p>
+          </div>
+        </div>
 
-            <p>
-              Instead of focusing on just one niche, Southern Elite Catering is
-              designed to support a wide range of gatherings. Different groups
-              have different needs, and our approach is to provide flexible
-              catering options that can adapt to those needs while maintaining
-              consistent quality and service.
+        <div class="col-md-6 col-xl-3">
+          <div class="icon-card">
+            <div class="icon-box">03</div>
+            <h3 class="display-font mb-2" style="font-size:2rem;">Flexibility</h3>
+            <p class="muted mb-0">
+              Every event is different, so our approach is meant to adapt to guest counts, styles, venues, and pacing.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="icon-card">
+            <div class="icon-box">04</div>
+            <h3 class="display-font mb-2" style="font-size:2rem;">Local Focus</h3>
+            <p class="muted mb-0">
+              Charleston events have their own rhythm, and local awareness helps create a smoother overall experience.
             </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- TYPES OF EVENTS -->
-    <section class="section-pad bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <h2 class="fw-bold mb-3">Catering for Many Types of Groups</h2>
-
-            <p>
-              Our services are designed for individuals, businesses, and
-              organizations throughout Charleston, South Carolina. Some events
-              require quick and efficient food service, while others benefit
-              from a more curated dining experience. Southern Elite Catering
-              works with a variety of clients including event planners,
-              corporate offices, families hosting private celebrations, and
-              organizations coordinating community events.
+  <!-- MISSION / NUMBERS -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-7">
+          <div class="content-panel h-100">
+            <span class="eyebrow">Our Mission</span>
+            <h2 class="display-font mb-3" style="font-size:3rem;">To help Charleston hosts feel prepared, supported, and proud of their event.</h2>
+            <p class="muted mb-4">
+              Southern Elite Catering is positioned to serve a wide range of local event needs, from elegant receptions
+              and office catering to private celebrations and social gatherings. Our mission is to make catering feel less stressful,
+              more organized, and more aligned with the atmosphere clients want to create.
             </p>
-
-            <p>
-              By offering multiple catering styles—from buffet service to
-              appetizer displays and beverage support—we aim to provide a
-              practical solution for different guest counts, budgets, and
-              venues. The focus is always on making sure guests enjoy the food
-              while the host enjoys the event.
+            <p class="muted mb-0">
+              We want every event to feel intentional, whether it is a small daytime brunch or a larger evening celebration.
+              That includes clear communication, dependable service, thoughtful setup, and menus that support the tone of the occasion.
             </p>
           </div>
+        </div>
 
-          <div class="col-lg-6">
-            <div class="card p-4 shadow-sm">
-              <h5 class="fw-bold mb-3">Events We Commonly Cater</h5>
+        <div class="col-lg-5">
+          <div class="numbers-card">
+            <span class="eyebrow text-white" style="color:#d7b99a!important;">Service Snapshot</span>
 
-              <ul class="mb-0">
-                <li>Weddings and rehearsal dinners</li>
-                <li>Corporate events and office gatherings</li>
-                <li>Private parties and milestone celebrations</li>
-                <li>Community and nonprofit events</li>
-                <li>Holiday parties and seasonal events</li>
-                <li>School and university functions</li>
-              </ul>
+            <div class="stat">
+              <h3 class="display-font">Weddings</h3>
+              <div class="small">Reception service, rehearsal dinners, cocktail hours, and curated food-and-drink support.</div>
+            </div>
+
+            <div class="stat">
+              <h3 class="display-font">Corporate</h3>
+              <div class="small">Office lunches, launches, mixers, client gatherings, and polished business event catering.</div>
+            </div>
+
+            <div class="stat">
+              <h3 class="display-font">Private Events</h3>
+              <div class="small">Birthdays, showers, brunches, home entertaining, and milestone celebrations across Charleston.</div>
+            </div>
+
+            <div class="stat">
+              <h3 class="display-font">Lowcountry Coverage</h3>
+              <div class="small">Serving Charleston, Mount Pleasant, West Ashley, James Island, Daniel Island, and nearby areas.</div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- LOCAL SECTION -->
-    <section class="section-pad">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 text-center">
-            <h2 class="fw-bold mb-3">Serving Charleston and the Lowcountry</h2>
+  <!-- IMAGE + QUOTE STYLE -->
+  <section class="section-pad soft-band">
+    <div class="container">
+      <div class="quote-wrap">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-lg-6">
+            <div class="quote-copy h-100 d-flex flex-column justify-content-center">
+              <span class="eyebrow">What We Believe</span>
+              <h2 class="display-font mb-4" style="font-size:3rem;">
+                Great catering should support the mood of the event, not interrupt it.
+              </h2>
+              <p class="muted mb-4">
+                From the first impression guests have when they walk in to the final moments of service,
+                catering helps shape how an event feels. Our approach centers on making that experience smooth,
+                attractive, and easy for the host to enjoy.
+              </p>
+              <p class="muted mb-0">
+                This page is also a good place to add founder information, team background, culinary philosophy,
+                or a more personal local Charleston story later.
+              </p>
+            </div>
+          </div>
 
-            <p>
-              Southern Elite Catering proudly provides catering services
-              throughout the Charleston area including Downtown Charleston,
-              Mount Pleasant, West Ashley, James Island, North Charleston,
-              Daniel Island, and surrounding Lowcountry communities. Our goal is
-              to help make events easier to host by delivering dependable
-              catering service wherever people gather.
-            </p>
-
-            <p>
-              Whether the event is a professional gathering, a celebration with
-              friends, or a large community event, our team works to bring great
-              food and smooth service to every table.
-            </p>
+          <div class="col-lg-6">
+            <div class="quote-image h-100">
+              <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=80" alt="Styled catering table and event presentation">
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-dark text-light py-4">
-      <div class="container text-center">
-        <p class="mb-1 fw-bold">Southern Elite Catering</p>
-        <p class="small mb-2">
-          Charleston Catering Services • Charleston, South Carolina
-        </p>
-
-        <p class="small mb-0">
-          Serving Downtown Charleston • Mount Pleasant • West Ashley • James
-          Island • North Charleston • Daniel Island • Summerville • and nearby
-          Lowcountry areas
-        </p>
+  <!-- GALLERY STACK -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="row align-items-end mb-5">
+        <div class="col-lg-8">
+          <span class="eyebrow">The Brand Look</span>
+          <h2 class="display-font mb-3" style="font-size:3rem;">A visual style that feels clean, warm, and event-ready.</h2>
+          <p class="muted mb-0">
+            This section keeps the same editorial, image-forward design language as the home page and gives you space
+            to add more real catering photography later.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+          <a href="index.html#request" class="btn btn-brand">Start Your Inquiry</a>
+        </div>
       </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="stack-image">
+            <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1200&q=80" alt="Appetizer catering display">
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="stack-image">
+            <img src="https://images.unsplash.com/photo-1528605105345-5344ea20e269?auto=format&fit=crop&w=1200&q=80" alt="Guests at a catered event">
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="stack-image">
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80" alt="Drink service setup for event">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-pad pt-0">
+    <div class="container">
+      <div class="content-panel text-center" style="border-radius:2rem;">
+        <span class="eyebrow">Let’s Plan Your Event</span>
+        <h2 class="display-font mb-3" style="font-size:3rem;">Looking for Charleston catering with a polished local feel?</h2>
+        <p class="muted mx-auto mb-4" style="max-width:760px;">
+          Southern Elite Catering is built for clients who want more than a basic catering drop-off.
+          If you are planning a wedding, corporate function, brunch, or private celebration in Charleston, this is the place to start.
+        </p>
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+          <a href="index.html#request" class="btn btn-brand">Request Pricing</a>
+          <a href="contact.html" class="btn btn-outline-dark rounded-pill px-4 py-3">Contact Page</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-4">
+          <div class="footer-title mb-2">Southern Elite Catering</div>
+          <div class="small text-white-50 mb-3">
+            Charleston catering for weddings, business events, private parties, and Lowcountry gatherings.
+          </div>
+          <div class="small text-white-50">
+            Add your phone number, service area details, and email here when ready.
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="fw-semibold text-white mb-3">Quick Links</div>
+          <div class="d-flex flex-column gap-2 small">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="index.html#faq">FAQ</a>
+            <a href="index.html#request">Request Pricing</a>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="fw-semibold text-white mb-3">Areas Served</div>
+          <div class="row row-cols-2 row-cols-md-3 g-2 small text-white-50">
+            <div class="col">Downtown Charleston</div>
+            <div class="col">Mount Pleasant</div>
+            <div class="col">West Ashley</div>
+            <div class="col">James Island</div>
+            <div class="col">North Charleston</div>
+            <div class="col">Daniel Island</div>
+            <div class="col">Johns Island</div>
+            <div class="col">Folly Beach</div>
+            <div class="col">Isle of Palms</div>
+            <div class="col">Sullivan’s Island</div>
+            <div class="col">Summerville</div>
+            <div class="col">Goose Creek</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-secondary my-4">
+
+      <div class="d-flex flex-wrap justify-content-between gap-2 small text-white-50">
+        <div>© <span id="year"></span> Southern Elite Catering. All rights reserved.</div>
+        <div>Charleston, South Carolina • Local Catering Brand</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
