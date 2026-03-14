@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Southern Elite Catering | Catering Services</title>
+  <meta name="description" content="Southern Elite Catering provides polished food and beverage catering for weddings, corporate events, private parties, and special gatherings." />
+  <link rel="canonical" href="https://yourdomain.com/catering" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    :root{
+      --sec-dark:#1d1b19;
+      --sec-tan:#efe7dc;
+      --sec-cream:#f7f3ee;
+      --sec-accent:#b88b5a;
+      --sec-text:#2e2a26;
+    }
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--sec-text);
+      background-color: #ffffff;
+    }
+
+    .navbar{
+      background: rgba(29,27,25,.92);
+      backdrop-filter: blur(8px);
+    }
+
+    .navbar-brand,
+    .nav-link{
+      color:#fff !important;
+    }
+
+    .nav-link:hover{
+      color: #e5d2bb !important;
+    }
+
+    .hero{
+      position: relative;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(20,18,16,.52), rgba(20,18,16,.52)),
+        url('https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: #fff;
+    }
+
+    .hero .eyebrow{
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: .8rem;
+      opacity: .9;
+    }
+
+    .hero h1{
+      font-size: clamp(2.3rem, 5vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+    }
+
+    .hero p{
+      max-width: 650px;
+      font-size: 1.08rem;
+      color: rgba(255,255,255,.92);
+    }
+
+    .btn-brand{
+      background: var(--sec-accent);
+      color: #fff;
+      border: none;
+      padding: .9rem 1.5rem;
+      border-radius: 999px;
+    }
+
+    .btn-brand:hover{
+      background: #a87b4b;
+      color:#fff;
+    }
+
+    .btn-outline-light-soft{
+      border: 1px solid rgba(255,255,255,.55);
+      color: #fff;
+      padding: .9rem 1.5rem;
+      border-radius: 999px;
+    }
+
+    .btn-outline-light-soft:hover{
+      background:#fff;
+      color:#111;
+    }
+
+    .section-pad{
+      padding: 5rem 0;
+    }
+
+    .section-light{
+      background: var(--sec-cream);
+    }
+
+    .section-tan{
+      background: var(--sec-tan);
+    }
+
+    .section-title{
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .lead-copy{
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #4a433c;
+    }
+
+    .service-image{
+      min-height: 420px;
+      border-radius: 1.25rem;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,.08);
+    }
+
+    .service-copy{
+      padding: 1rem 0;
+    }
+
+    .service-kicker{
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .78rem;
+      color: #8c6c49;
+      margin-bottom: .65rem;
+      font-weight: 700;
+    }
+
+    .service-copy h2{
+      font-size: clamp(1.7rem, 2.4vw, 2.6rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .service-copy p{
+      line-height: 1.85;
+      color: #4a433c;
+    }
+
+    .feature-box{
+      background: #fff;
+      border-radius: 1.2rem;
+      padding: 2rem;
+      height: 100%;
+      box-shadow: 0 15px 40px rgba(0,0,0,.05);
+    }
+
+    .feature-box h3{
+      font-size: 1.2rem;
+      margin-bottom: .8rem;
+      font-weight: 700;
+    }
+
+    .feature-box p{
+      margin-bottom: 0;
+      color:#5b544d;
+      line-height: 1.8;
+    }
+
+    .inquiry-wrap{
+      background: var(--sec-dark);
+      color: #fff;
+      border-radius: 1.5rem;
+      padding: 3rem;
+    }
+
+    .inquiry-wrap p{
+      color: rgba(255,255,255,.86);
+      line-height: 1.85;
+    }
+
+    .form-control,
+    .form-select{
+      border-radius: .85rem;
+      padding: .95rem 1rem;
+      border: 1px solid #d9d0c5;
+      box-shadow: none !important;
+    }
+
+    .form-control:focus,
+    .form-select:focus{
+      border-color: var(--sec-accent);
+    }
+
+    footer{
+      background: #141311;
+      color: rgba(255,255,255,.84);
+    }
+
+    footer a{
+      color: rgba(255,255,255,.84);
+      text-decoration: none;
+    }
+
+    footer a:hover{
+      color: #fff;
+    }
+
+    .footer-small{
+      font-size: .95rem;
+      color: rgba(255,255,255,.66);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Southern Elite Catering</a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="catering.html">Catering</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="eyebrow mb-3">Full-Service Catering</div>
+          <h1 class="mb-4">Thoughtful Catering for Gatherings That Matter</h1>
+          <p class="mb-4">
+            Southern Elite Catering offers polished food and beverage service for weddings,
+            business events, private celebrations, and community gatherings. Our goal is simple:
+            make hosting easier and help your guests feel well taken care of.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#inquiry" class="btn btn-brand">Request Catering Info</a>
+            <a href="#options" class="btn btn-outline-light-soft">View Catering Options</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section-pad section-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-9 text-center">
+          <h2 class="section-title">A Catering Service Built Around Hospitality</h2>
+          <p class="lead-copy mb-0">
+            Southern Elite Catering is designed for clients who want quality food, professional presentation,
+            and a smooth event-day experience. Whether you are planning a relaxed brunch, an upscale evening reception,
+            a corporate luncheon, or a private celebration, our team focuses on dependable service, flexible menu planning,
+            and an atmosphere that feels warm, organized, and elevated.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature boxes -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-box">
+            <h3>Private Events</h3>
+            <p>
+              From birthdays and anniversaries to in-home dinners and family celebrations,
+              we create catering that fits the mood, guest count, and style of your event.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-box">
+            <h3>Corporate Catering</h3>
+            <p>
+              Office lunches, team meetings, client receptions, and company parties benefit
+              from clean presentation, easy coordination, and food your guests will actually enjoy.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-box">
+            <h3>Wedding Weekends</h3>
+            <p>
+              We help support rehearsal dinners, welcome events, brunches, and other wedding-related
+              gatherings with service that feels both polished and personal.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catering options -->
+  <section id="options" class="section-pad section-tan">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Catering Options</h2>
+        <p class="lead-copy mb-0">
+          Choose the level of service that fits your event, your guest list, and the kind of experience you want to create.
+        </p>
+      </div>
+
+      <!-- Option 1 -->
+      <div class="row align-items-center g-5 mb-5">
+        <div class="col-lg-6">
+          <div class="service-image" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80');"></div>
+        </div>
+        <div class="col-lg-6">
+          <div class="service-copy">
+            <div class="service-kicker">On-Site Service</div>
+            <h2>Full-Service Catering</h2>
+            <p>
+              Ideal for weddings, private parties, and business functions where you want a more complete setup.
+              This option can include staffed service, buffet or plated presentation, beverage support,
+              and coordination that helps the event flow naturally from start to finish.
+            </p>
+            <p class="mb-0">
+              Full-service catering is the right fit when hospitality is part of the experience and you want guests
+              to feel genuinely hosted, not simply fed.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option 2 -->
+      <div class="row align-items-center g-5 mb-5 flex-lg-row-reverse">
+        <div class="col-lg-6">
+          <div class="service-image" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80');"></div>
+        </div>
+        <div class="col-lg-6">
+          <div class="service-copy">
+            <div class="service-kicker">Drop-Off Catering</div>
+            <h2>Simple, Convenient, Ready to Serve</h2>
+            <p>
+              For office lunches, casual celebrations, team gatherings, and daytime events, our drop-off catering option
+              keeps things easy. We prepare the food, package it neatly, and deliver it ready for your guests.
+            </p>
+            <p class="mb-0">
+              This is a great choice when you want high-quality catering without the need for a full on-site service team.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option 3 -->
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="service-image" style="background-image:url('https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=80');"></div>
+        </div>
+        <div class="col-lg-6">
+          <div class="service-copy">
+            <div class="service-kicker">Custom Menus</div>
+            <h2>Built Around Your Event</h2>
+            <p>
+              Not every event fits a preset package. We also offer custom catering planning for hosts who need
+              a menu or service approach tailored to the occasion, guest preferences, event timing, or venue setup.
+            </p>
+            <p class="mb-0">
+              Whether you are planning something elegant, casual, social, or business-focused, Southern Elite Catering
+              can help shape a service plan that feels appropriate and intentional.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why clients book -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-xl-8">
+          <h2 class="section-title">Why Clients Book Southern Elite Catering</h2>
+          <p class="lead-copy mb-0">
+            We understand that good catering is about more than food. It is about timing, guest comfort,
+            communication, presentation, and making the host feel confident throughout the process.
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-box">
+            <h3>Professional Presentation</h3>
+            <p>Clean setups, polished service, and a look that supports the tone of your event.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-box">
+            <h3>Flexible Planning</h3>
+            <p>We work with different event sizes, timelines, and service needs without overcomplicating the process.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-box">
+            <h3>Reliable Coordination</h3>
+            <p>Clear communication helps your event day feel smoother, calmer, and more organized.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-box">
+            <h3>Guest-Focused Service</h3>
+            <p>We aim to create an experience where people feel welcomed, comfortable, and well served.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inquiry section -->
+  <section id="inquiry" class="section-pad section-light">
+    <div class="container">
+      <div class="inquiry-wrap">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5">
+            <div class="service-kicker text-light">Book Your Event</div>
+            <h2 class="mb-3">Tell Us About Your Catering Needs</h2>
+            <p class="mb-0">
+              If you are planning a wedding event, office function, private dinner, party, or social gathering,
+              send us a few details and we will follow up with the next steps. This page is meant to help clients
+              understand our catering services and start the conversation.
+            </p>
+          </div>
+
+          <div class="col-lg-7">
+            <form action="https://formsubmit.co/info@sweetpalmevents.com" method="POST">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Full Name" />
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" placeholder="Email Address" />
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Phone Number" />
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Event Date" />
+                </div>
+                <div class="col-md-6">
+                  <select class="form-select">
+                    <option selected>Type of Event</option>
+                    <option>Wedding</option>
+                    <option>Corporate Event</option>
+                    <option>Private Party</option>
+                    <option>Community Event</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Estimated Guest Count" />
+                </div>
+                <div class="col-12">
+                  <textarea class="form-control" rows="5" placeholder="Tell us about your event, venue, style, and service needs"></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-brand">Submit Inquiry</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing copy -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-xl-8">
+          <h2 class="section-title">Service That Feels Easy for the Host</h2>
+          <p class="lead-copy mb-0">
+            Southern Elite Catering exists to help clients host with confidence. We want the process to feel clear,
+            the event to feel cared for, and the overall experience to reflect the level of hospitality your guests deserve.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <div class="col-lg-4">
+          <h5 class="fw-bold text-white">Southern Elite Catering</h5>
+          <p class="mb-0 footer-small">
+            Food and beverage catering for weddings, corporate gatherings, private events, and special occasions.
+          </p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="text-white">Pages</h6>
+          <ul class="list-unstyled footer-small">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h6 class="text-white">Events We Serve</h6>
+          <ul class="list-unstyled footer-small">
+            <li>Weddings</li>
+            <li>Corporate Catering</li>
+            <li>Private Parties</li>
+            <li>Social Gatherings</li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h6 class="text-white">Contact</h6>
+          <ul class="list-unstyled footer-small mb-0">
+            <li>Email: info@yoursite.com</li>
+            <li>Phone: (000) 000-0000</li>
+            <li>Charleston, South Carolina</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-top border-secondary pt-3 footer-small">
+        &copy; 2026 Southern Elite Catering. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
